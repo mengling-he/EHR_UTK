@@ -1,0 +1,17 @@
+Age
+Gravida
+Para
+Number.of.Babies.In.Womb
+Delivery.Year
+Infant.Cord.Vessels.A
+Infant.Length.A
+Birthweight.A
+GA.At.Birth.A
+Weight.Prepregnancy
+Weight.Gain.Pounds
+OFC.At.Birth.Baby.A.In
+Quantitative.Blood.Loss.DS
+Weight.Delivery
+BMI_delivery
+BMI_prepregnancy
+Labortime

@@ -1,0 +1,111 @@
+,variable,data type,missing percentage
+0,Age,float64,0.01
+1,County,object,9.229999999999999
+2,Gravida,float64,0.09
+3,Para,float64,0.27
+4,Delivery Anesthesia,object,0.66
+5,Labor Anesthesia,object,4.590000000000001
+6,Episiotomy,object,2.16
+7,Laceration Extension,object,58.230000000000004
+8,Laceration Type,object,3.5999999999999996
+9,Amniotic Fluid Color,object,2.11
+10,Attempt to Vbac,object,82.49
+11,Csection Incidence,object,69.92
+12,Csection Urgency,object,69.98
+13,Membranes Rupture Method,object,1.6199999999999999
+14,Membranes Rupture Time,datetime64[ns],1.92
+15,Number of Babies In Womb,float64,0.58
+16,Oxytocin,object,43.519999999999996
+17,Placenta Delivery Time,datetime64[ns],0.86
+18,Reason For Csection,object,69.96
+19,Intrapartum Complications,float64,100.0
+20,Other Intrapartum Complication,object,66.43
+21,Delivery Month,object,0.0
+22,Delivery Year,int64,0.0
+23,Gestational Status A,object,0.2
+24,Born In Route A,object,0.08
+25,Other Infant Complications A,object,91.08000000000001
+26,Infant Cord Vessels A,float64,2.0
+27,Infant Length A,float64,7.12
+28,IUFD A,object,99.0
+29,Neonatal Death A,object,99.8
+30,Fetal Presentation A,object,0.49
+31,Method of Delivery A,object,0.03
+32,Forceps a,object,97.84
+33,Vacuum Extraction A,object,97.32
+34,VBAC A,object,95.71
+35,Infant Sex A,object,0.11
+36,Birthweight A,float64,1.3599999999999999
+37,Condition A,object,1.24
+38,GA At Birth A,float64,0.18
+39,APGAR 1 minute  A,float64,1.66
+40,APGAR 5 minutes A,float64,1.7399999999999998
+41,APGAR 10 minutes A,float64,97.36
+42,Infant Complications A,object,2.6
+43,Gestational Status B,object,97.83
+44,Born In Route B,object,97.81
+45,Other Complications B,object,99.77000000000001
+46,Infant Cord Vessels B,float64,97.96000000000001
+47,Infant Length B,float64,98.47
+48,IUFD B,object,99.91
+49,Neonatal Death B,object,99.99
+50,Fetal Presentation B,object,97.84
+51,Method of Delivery B,object,97.81
+52,Forceps B,object,99.92999999999999
+53,Vacuum Extraction B,object,99.97
+54,VBAC B,object,99.98
+55,Infant Sex B,object,97.83
+56,Birthweight B,float64,97.95
+57,Condition B,object,97.91
+58,GA At Birth B,float64,97.84
+59,APGAR 1 minute B,float64,98.0
+60,APGAR 5 minutes B,float64,98.0
+61,APGAR 10 Minutes B,float64,99.87
+62,Infant Complications B,object,97.98
+63,Resident,object,40.23
+64,Cervical Ripening Agents,object,75.49
+65,Other Cervical Ripening Agents,object,84.09
+66,Feeding Plans at Discharge,object,19.28
+67,Physical Findings A,float64,100.0
+68,Feeding Preference,object,1.82
+69,Weight Prepregnancy,float64,13.56
+70,Weight,float64,4.77
+71,Weight Gain Pounds,float64,16.21
+72,Height Inches,float64,5.45
+73,Preterm Labor,object,4.07
+74,Comments Preterm Labor,object,94.72
+75,Premature Rom,object,4.38
+76,Comments Prom,object,96.71
+77,Hypertensive Disorders Preg,object,3.52
+78,Comments Pih Hellp,object,77.79
+79,Diabetes,object,3.7600000000000002
+80,Comments Diabetes,object,81.0
+81,Pitocin Start Date Time,datetime64[ns],97.94
+82,Feeding preference PP,object,2.26
+83,Adm Alcohol,object,0.32
+84,Adm Cigarettes,object,0.8699999999999999
+85,Adm Marijuana,object,0.32
+86,Adm Cocaine Crack,object,0.53
+87,Adm Illicit Drugs,object,0.52
+88,Adm Illicit Drugs Text,object,91.64999999999999
+89,OFC At Birth Baby A In,float64,7.870000000000001
+90,Provider On Admission,object,0.22
+91,Total Rom Time Prior to Del,float64,1.94
+92,CS Called Date Time,datetime64[ns],87.87
+93,Complete Dilatation,datetime64[ns],32.519999999999996
+94,Labor Hours Stage 2,float64,32.54
+95,Labor Minutes Stage 2,float64,32.54
+96,Prenatal Provider Name,object,2.09
+97,Reason For Admission LD,object,2.85
+98,Reason For Admission Other,object,86.33
+99,Quantitative Blood Loss DS,float64,44.58
+100,Quantitative Blood Loss OR,float64,100.0
+101,QBL2 hrs PP,float64,81.78999999999999
+102,Units RBCS Transfused,float64,97.61999999999999
+103,Total Units RBCS Received,float64,97.71
+104,QBL Total LD,float64,84.61999999999999
+105,Race,object,2.3
+106,Ethnicity,object,7.17
+107,AdmitToDelMinutes,float64,7.08
+108,AdmitToDischargeMinutes,float64,24.52
+109,DeliveryToDischargeMinutes,float64,19.12
