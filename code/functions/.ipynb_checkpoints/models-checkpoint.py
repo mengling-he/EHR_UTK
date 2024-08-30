@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import statistics
-from keras.wrappers.scikit_learn import KerasClassifier
+from scikeras.wrappers import KerasClassifier, KerasRegressor
 from tensorflow import keras as ks
 from sklearn.model_selection import GridSearchCV
 from sklearn.manifold import TSNE
@@ -99,14 +99,16 @@ def run_AE(X_train_scaled, X_test_scaled, param_grid=None):
 
     if param_grid == None:
         param_grid = {
-            'actual_dim' : [len(X_train_scaled.columns)],
+            'actual_dim' : [X_train_scaled.shape[1]],
             'latent_dim' : [10, 25, 50, 100],
             'activation' : ['relu', 'sigmoid', 'tanh'],
             'loss' : ['MAE', 'binary_crossentropy'],
-            'optimizer' : ['SGD', 'Adam']
+            'optimizer' : ['SGD', 'Adam'],
+            'epochs': [10],
+            'batch_size': [32]  # Added batch_size for training
         }
 
-    model = KerasClassifier(build_fn=create_AE, epochs=10, verbose=0)
+    model = KerasClassifier(build_fn=create_AE,verbose=0)
     grid = GridSearchCV(
         estimator=model,
         param_grid=param_grid,
