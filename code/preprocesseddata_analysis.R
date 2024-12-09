@@ -4,8 +4,8 @@ library(ggplot2)
 library(readxl)
 library(mice)
 
-## from raw data to cleaned dataset, how many variables is deleted and its reason, 
-## how many variable is created and reason.
+# # from raw data to cleaned dataset, how many variables is deleted and its reason, 
+# # how many variable is created and reason.
 
 # replace NULL with NA-----------
 data_clean <- read.csv("data/UTK_med_data_cleaned.csv",  header = TRUE)
@@ -241,26 +241,26 @@ data_complete <- na.omit(data_NA)
 #     mutate(across(where(is.numeric), ~ifelse(is.na(.), mean(., na.rm = TRUE), .)))
 # }
 # data_mean <- replace_na_numeric(data_lowmiss)
-# 
+#
 # # the most used one
 # replace_na_categorical <- function(df) {
 #   df %>%
 #     mutate(across(where(is.character), ~ifelse(is.na(.), Mode(.), .)))
 # }
-# 
+#
 # Mode <- function(x) {
 #   ux <- unique(x)
 #   ux[which.max(tabulate(match(x, ux)))]
 # }
-# 
-# 
+#
+#
 # data_mean <- replace_na_categorical(data_mean)
-##### Machine learning way
+# #### Machine learning way
 
 
 
 
-##### MICE
+# #### MICE
 # Initialize default methods
 # delete county and provider for now since it has too many levels
 # data_NA_mice <- data_NA %>% select(-County,-Provider.On.Admission)
@@ -271,10 +271,10 @@ data_complete <- na.omit(data_NA)
 # print(nzv)
 
 
-# 
+#
 # imputation_methods <- make.method(data_NA_mice)
-# 
-# 
+#
+#
 # # Specify methods for categorical variables
 # imputation_methods["Age"] <- "pmm"  
 # #imputation_methods["County"] <- "polyreg"   # Polytomous regression for categorical variables
@@ -428,24 +428,27 @@ write.csv(data_NA, file = "./data/data_NA.csv", row.names = FALSE)
 write.csv(data_complete, file = "./data/data_complete.csv", row.names = FALSE)
 #write.csv(data_mean, file = "./data/data_mean.csv", row.names = FALSE)
 write.csv(data_mice, file = "./data/data_mice.csv", row.names = FALSE)
-data_ml <- read.csv("data/data_ml.csv",  header = TRUE)
-data_mean <- read.csv("data/data_mean.csv",  header = TRUE)
-
-
+data_complete <- read.csv("EHR_UTK/data/data_complete.csv",  header = TRUE)
+data_mean <- read.csv("EHR_UTK/data/data_mean.csv",  header = TRUE)
+data_ml <- read.csv("EHR_UTK/data/data_ml.csv",  header = TRUE)
+data_mice <- read.csv("EHR_UTK/data/data_mice.csv",  header = TRUE)
 
 ### plot for response: emergency
 Emer_com <- as.data.frame(table(data_complete$Csection.Urgency))
 Emer_mean <- as.data.frame(table(data_mean$Csection.Urgency))
 Emer_ml <- as.data.frame(table(data_ml$Csection.Urgency))
 Emer_mice <- as.data.frame(table(data_mice$Csection.Urgency))
+
 df_emer <- rbind(Emer_com,Emer_mean,Emer_ml,Emer_mice)
 colnames(df_emer) <- c("Category","Count")
-df_emer$Dataset <- rep(c("complete", "mean", "ML", "MICE"), each=4)
+df_emer <- df_emer[df_emer$Category != "Schedule", ]
+df_emer$Dataset <- rep(c("complete", "mean", "ML", "MICE"), each=3)
 df_emer$count2 <- df_emer$Count
-df_emer[5:12,4] <- ""
+df_emer[4:9,4] <- ""
 
 
-ggplot(df_emer, aes(x=factor(Category),y = Count, fill=dataset))+
+
+ggplot(df_emer, aes(x=factor(Category),y = Count, fill=Dataset))+
   geom_bar(stat="identity", position=position_dodge())+
   geom_text(aes(x = factor(Category),label=count2), 
             position = position_dodge(width = 1),
@@ -455,7 +458,7 @@ ggplot(df_emer, aes(x=factor(Category),y = Count, fill=dataset))+
   theme_minimal()
 
 
-ggplot(df_emer, aes(x=factor(Category),y = Count, fill=dataset))+
+ggplot(df_emer, aes(x=factor(Category),y = Count, fill=Dataset))+
   geom_col(position=position_dodge())+
   xlab("Method of Delivery") + ylab("Count")+
   scale_fill_brewer(palette="Paired")+
