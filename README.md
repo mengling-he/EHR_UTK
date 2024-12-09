@@ -1,7 +1,7 @@
 # EHR_UTK
 
 Step 1: data_preprocessing1(basic data cleaning)---->UTK_med_data_cleaned.csv
-data_preprocessing1(unreasonable data manipuklation)--->UTK_med_data_cleaned_with_nan.csv
+data_preprocessing2(unreasonable data manipuklation)--->UTK_med_data_cleaned_with_nan.csv
 
 step 2: data imputation
 preprocesseddata_analysis ---->data_NA; data_complete; data_mice
